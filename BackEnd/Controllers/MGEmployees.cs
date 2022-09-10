@@ -37,7 +37,7 @@ namespace BackEnd.Controllers
             return (IEnumerable<Employee>)emp;
         }
 
-       // [Authorize]
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Employee>> GetEmployeeById(int id)
         {
@@ -87,7 +87,7 @@ namespace BackEnd.Controllers
             return Ok();
 
         }
-      //  [Authorize]
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateEmployee(int id, employeeDTO emp)
         {
@@ -120,7 +120,7 @@ namespace BackEnd.Controllers
         }
 
         
-     //   [Authorize]
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
@@ -154,8 +154,6 @@ namespace BackEnd.Controllers
             };
             return Ok(emptoken);
         }
-
-
 
     }
 }

@@ -14,13 +14,10 @@ export class NavMenuComponent implements OnInit{
   logindto = {} as  logindto;
   emptokenvar = {} as emptokendto;
   isloggedin = false;
-
-  
   
   constructor(private service:EmplService){}
   ngOnInit(): void {
     this.getCurrentUser();
-
   }
   collapse() {
     this.isExpanded = false;
@@ -38,10 +35,12 @@ export class NavMenuComponent implements OnInit{
       );
       
   }
-  logout(){
+  logout(){   
+    this.service.logout(); 
     this.isloggedin = false;  
-    this.service.logout();
+    console.log(this.isloggedin);
   }
+
   getCurrentUser(){
     this.service.currentUser$.subscribe(user => {this.isloggedin= !!user ;});
   }
