@@ -1,0 +1,46 @@
+<h1>Maqtaa Gateway Employees</h1>
+
+<p *ngIf="!empls"><b>Loading...</b></p>
+
+<table class="table table-striped" *ngIf="empls">
+<thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Arabic Name</th>
+        <th>Emp. Number</th>
+        <th>Join Date</th>
+        <th>Birth Date</th>
+        <th>Salary</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let empl of empls">
+        <td>{{empl.firstname}}</td>
+        <td>{{empl.lastname}}</td>
+        <td>{{empl.arabicfullname }}</td>
+        <td>{{empl.empnumber}}</td>
+        <td>{{empl.dateJoin | date: "dd/MM/yyyy"}}</td>
+        <td>{{empl.birthdate | date: "dd/MM/yyyy"}}</td>
+        <td>{{empl.salary}}</td>
+        <td>
+            <button type="button" 
+                class="btn btn-default btn-sm" 
+                (click)="showEmployee(empl.idemployee)">
+                Show
+            </button>
+            <button type="button" 
+                class="btn btn-success btn-sm" 
+                (click)="updateEmployee(empl.idemployee)">
+                Update
+            </button>
+            <button type="button" 
+                class="btn btn-danger btn-sm" 
+                (click)="deleteEmployee(empl.idemployee)">
+                Delete
+            </button>
+        </td>
+    </tr>
+</tbody>
+</table>

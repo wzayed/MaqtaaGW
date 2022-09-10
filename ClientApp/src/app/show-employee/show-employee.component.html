@@ -1,0 +1,85 @@
+     <h3>Show Specific Employee</h3>
+     <div class="form-group">
+        <label for="empnumber" class="required">Emp. Number</label>
+        <input [(ngModel)]="empl.empnumber" type="text" class="form-control"
+        id="empnumber"  placeholder="Employee Number" readonly>
+    </div>
+
+    <div class="form-group">
+        <label for="firstname" class="required">First Name</label>
+        <input  [(ngModel)]="empl.firstname" type="text" 
+        class="form-control" id="firstname"  placeholder="First Name" readonly>
+    </div>
+    <div class="form-group">
+        <label for="lastname" class="required">Last Name</label>
+        <input  [(ngModel)]="empl.lastname" type="text" 
+        class="form-control" id="lastname"  placeholder="Last Name" readonly>
+    </div>
+
+    <div class="form-group">
+        <label for="arabicfullname" class="required">Arabic Full Name</label>
+        <input  [(ngModel)]="empl.arabicfullname" type="text" 
+        class="form-control" id="arabicfullname"  placeholder="Arabic Full Name Name" readonly>
+    </div>
+
+    <div class="form-group">
+        <label for="gender" class="required">Gender</label>
+        <select [(ngModel)]='empl.gender' id="gender" class="form-control">
+            <option value='1'>Male</option>
+            <option value='2'>Female</option>           
+          </select>
+    </div>
+
+    <div class="form-group">
+        <label for="salary" class="required">Salary</label>
+        <input [(ngModel)]="empl.salary" type="text" 
+        class="form-control" id="salary"  placeholder="Employee Salary" readonly>
+    </div>
+    <div class="form-group">
+        <label for="idjob" class="required">Job</label>
+        <select [(ngModel)]='empl.idjob' id="idjob" class="form-control">
+        <option value='1'>RTG Operator</option>
+        <option value='2'>Terminal Manager</option>
+        <option value='3'>Logistics Manager</option>
+      </select>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-xs-4 col-sm-4">
+            <div class="form-group">
+                <label for="birthdate">Birth Date</label>
+                <input  [value]="empl.birthdate | date:'yyyy-MM-dd'" type="date" 
+                (change)="empl.birthdate = $any($event.target).value"
+                class="form-control" 
+                id="birthdate"                
+                placeholder="Birth Date" readonly>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-4 col-sm-4">
+            <div class="form-group">
+                <label for="dateJoin">Date Join</label>
+                    <input 
+                    [value]="empl.dateJoin | date:'yyyy-MM-dd'" type="date" 
+                    class="form-control" 
+                    id="dateJoin"                    
+                    placeholder="Date Join" readonly>
+            </div> 
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description" class="required">Description</label>
+        <input  [(ngModel)]="empl.description" 
+        type="text" class="form-control" id="description"  placeholder="Employee description" readonly>
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="required">Password</label>
+        <input  [(ngModel)]="empl.password" type="text" class="form-control" id="password" 
+         placeholder="Password" readonly>
+    </div>
+
+   
+  
+    <button class="btn btn-warning" [routerLink]="['/listemps']">Back</button>
+
+  

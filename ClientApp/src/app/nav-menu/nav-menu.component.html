@@ -1,0 +1,57 @@
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">Maqtaa Gateway</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/newemployee']"
+              >Register(Add)</a
+            >
+          </li> 
+        </ul>
+      </div>
+      <form *ngIf="!isloggedin" #loginForm="ngForm" class="d-flex mt-2 mt-md-0" (ngSubmit)="login()" 
+      autocomplete="off">
+      <input 
+          name="username"
+          [(ngModel)]="logindto.username"
+          class="form-control me-sm-2" 
+          type="text" 
+          placeholder="Username">
+      <input 
+          name="password"
+          [(ngModel)]="logindto.password"
+          class="form-control me-sm-2" 
+          type="password" 
+          placeholder="Password">
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+  </form>
+  <!-- <p *ngif="isloggedin">{{'Wellcome ' + emptokenvar.username}}</p> -->
+  <button *ngIf="isloggedin" class="btn btn-warning my-2 my-sm-0" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+</header>
