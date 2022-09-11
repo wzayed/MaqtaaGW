@@ -4,7 +4,7 @@ export interface employee{
                 firstname: string;
                 lastname: string;
                 arabicfullname: string;
-                email : string;
+                empemail : string;
                 gender?: number;
                 salary?: number;
                 birthdate?:Date ;

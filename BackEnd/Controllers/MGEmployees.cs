@@ -67,7 +67,7 @@ namespace BackEnd.Controllers
                 empnumber = emp.empnumber,
                 gender = emp.gender,
                 description = emp.description,
-                email = emp.email,
+                empemail = emp.empemail,
                 salary = emp.salary,
                 idjob = emp.idjob,
                 password = hmac.ComputeHash(Encoding.UTF8.GetBytes(emp.password)),
@@ -101,7 +101,7 @@ namespace BackEnd.Controllers
                 empeExisting.empnumber = emp.empnumber;
                 empeExisting.gender = emp.gender;
                 empeExisting.description = emp.description;
-                empeExisting.email = emp.email;
+                empeExisting.empemail = emp.empemail;
                 empeExisting.salary = emp.salary;
                 empeExisting.idjob = emp.idjob;
                 empeExisting.password = hmac.ComputeHash(Encoding.UTF8.GetBytes(emp.password));
@@ -137,7 +137,7 @@ namespace BackEnd.Controllers
         [HttpPost]
         public async Task<ActionResult<EmpToken>> login(logindto logindto)
         {
-            var empfromdb = await _dbcontext.employees.SingleOrDefaultAsync(x => x.email == logindto.username);
+            var empfromdb = await _dbcontext.employees.SingleOrDefaultAsync(x => x.empemail == logindto.username);
             if(empfromdb == null) return Unauthorized("Invalid email");
             using var hmac = new HMACSHA512(empfromdb.passwordsalt);
 
@@ -149,7 +149,7 @@ namespace BackEnd.Controllers
             }
             var emptoken = new EmpToken
             {
-               username = empfromdb.email,
+               username = empfromdb.empemail,
                token = _tokenService.CreateToken(empfromdb)
             };
             return Ok(emptoken);

@@ -21,6 +21,7 @@ export class UpdateEmployeeComponent implements OnInit {
     this.service.updateEmployee(this.route.snapshot.params['id'], this.empl).subscribe(data => {
       this.router.navigate(["/listemps"]);
     }, error => {      
+      alert('Please Enter all The Required Data, and Enter It Correctly');
     })
   }
 }

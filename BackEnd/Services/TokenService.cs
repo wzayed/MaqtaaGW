@@ -19,7 +19,7 @@ namespace BackEnd.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.NameId, emp.email)
+                new Claim(JwtRegisteredClaimNames.NameId, emp.empemail)
             };
             var creds = new SigningCredentials(_tokenkey, SecurityAlgorithms.HmacSha512Signature);
             var tokenDescriptor = new SecurityTokenDescriptor

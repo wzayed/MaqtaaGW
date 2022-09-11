@@ -20,7 +20,7 @@ namespace BackEnd.Models.DTOs
         public int? salary { get; set; }
 
         [Required]
-        public string email { get; set; }
+        public string empemail { get; set; }
         public DateTime? birthdate { get; set; }
         public DateTime? dateJoin { get; set; }
         public string? description { get; set; }

@@ -19,11 +19,11 @@ namespace BackEnd.Models
 
         public int? gender { get; set; }
         public int? salary { get; set; }
+        [Required]
+        public string empemail { get; set; }
         public DateTime? birthdate { get; set; }
         public DateTime? dateJoin { get; set; }
         public string? description { get; set; }
-        [Required]
-        public string email { get; set; }
         public byte[]? password { get; set; } //password and salt
         public byte[]? passwordsalt { get; set; }
 

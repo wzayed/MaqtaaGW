@@ -29,6 +29,7 @@ export class NewEmployeeComponent implements OnInit {
         this.router.navigate(["/listemps"]);
       }, error => {
         this.showError = true;
+        alert('Please Enter all The Required Data, and Enter It Correctly');
       })
     }
 }

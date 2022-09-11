@@ -1,4 +1,9 @@
 using System.Numerics;
+using BackEnd.Models;
+using BackEnd.Controllers;
+using Moq;
+using FluentAssertions;
+using FluentAssertions.Data;
 
 namespace BackEnd.xUnitTest.Controllers
 {
@@ -7,7 +12,11 @@ namespace BackEnd.xUnitTest.Controllers
         [Fact]
         public void getEmployees_ONSuccessReturnsStatusCode200()
         {
+            //Arrange 
 
+            //Act
+
+            //Assert
         }
   
         // Test for various employee IDs 
