@@ -1,6 +1,7 @@
 using System.Numerics;
 using BackEnd.Models;
 using BackEnd.Controllers;
+using RestSharp;
 using Moq;
 using FluentAssertions;
 using FluentAssertions.Data;
